@@ -4,21 +4,26 @@ const TechStack = () => {
     // We can use per-icon configuration or unified.
 
     const techs = [
-        { name: "React", icon: "react" },
-        { name: "Vite", icon: "vite" },
-        { name: "Tailwind CSS", icon: "tailwindcss" },
+        { name: "Node.js", icon: "nodejs" },
         { name: "JavaScript", icon: "js" },
+        { name: "TypeScript", icon: "typescript" },
         { name: "HTML5", icon: "html" },
         { name: "CSS3", icon: "css" },
-        { name: "Node.js", icon: "nodejs" },
         { name: "Python", icon: "python" },
+        { name: "Rust", icon: "rust" },
+        { name: "Tauri", icon: "tauri" },
+        { name: "Electron", icon: "electron" },
+        { name: "React", icon: "react" },
+        { name: "Next.js", icon: "nextjs" },
+        { name: "Vite", icon: "vite" },
+        { name: "Svelte", icon: "svelte" },
+        { name: "Tailwind CSS", icon: "tailwindcss" },
         { name: "Git", icon: "git" },
         { name: "GitHub", icon: "github" },
+        { name: "Supabase", icon: "supabase" },
+        { name: "PostgreSQL", icon: "postgresql" },
         { name: "Firebase", icon: "firebase" },
         { name: "MongoDB", icon: "mongodb" },
-        // Add more as needed: electron, svelte, etc. based on project data
-        { name: "Electron", icon: "electron" },
-        { name: "Svelte", icon: "svelte" },
     ];
 
     return (
