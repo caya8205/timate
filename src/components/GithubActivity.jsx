@@ -75,7 +75,10 @@ const EVENT_CONFIG = {
         icon: Icons.Push,
         getMessage: (event) => {
             const commits = event.payload.commits;
-            if (!commits || commits.length === 0) return 'Pushed code';
+            if (!commits || commits.length === 0) {
+                const branch = event.payload.ref?.replace('refs/heads/', '') || '';
+                return branch ? `Pushed to ${branch}` : 'Pushed code';
+            }
             if (commits.length === 1) return commits[0].message.split('\n')[0];
             return `${commits.length} commits — ${commits[0].message.split('\n')[0]}`;
         },
@@ -182,7 +185,30 @@ const GithubActivity = () => {
                     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
                     .slice(0, 8);
 
-                setEvents(allEvents);
+                // Enrich PushEvents that are missing commit messages
+                const enrichPromises = allEvents.map(async (event) => {
+                    if (event.type === 'PushEvent' && (!event.payload.commits || event.payload.commits.length === 0) && event.payload.head) {
+                        try {
+                            const commitRes = await fetch(
+                                `https://api.github.com/repos/${event.repo.name}/commits/${event.payload.head}`
+                            );
+                            if (commitRes.ok) {
+                                const commitData = await commitRes.json();
+                                event.payload.commits = [{
+                                    sha: commitData.sha,
+                                    message: commitData.commit.message,
+                                }];
+                            }
+                        } catch {
+                            // Silently fail — will show branch name fallback
+                        }
+                    }
+                    return event;
+                });
+
+                const enrichedEvents = await Promise.all(enrichPromises);
+
+                setEvents(enrichedEvents);
                 setLoading(false);
             } catch (err) {
                 console.error(err);

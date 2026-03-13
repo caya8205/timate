@@ -12,6 +12,7 @@ import PageWrapper from './components/PageWrapper';
 import CustomHeaderBg from './components/CustomHeaderBg';
 import ScrollToTop from './components/ScrollToTop';
 import AIChatWidget from './components/AIChatWidget';
+import { Analytics } from '@vercel/analytics/react';
 
 // Create a component for the animated routes to use useLocation hook
 const AnimatedRoutes = () => {
@@ -40,6 +41,7 @@ function App() {
         <CustomHeaderBg />
         <Navbar />
         <AIChatWidget />
+        <Analytics />
         <AnimatedRoutes />
         <footer className="py-8 text-center text-gray-400 dark:text-gray-500 text-sm mt-12 border-t dark:border-gray-800">
           <p>&copy; 2024 Jengset Dev Group. All rights reserved.</p>
