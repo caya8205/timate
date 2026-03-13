@@ -3,10 +3,10 @@ export const teamMembers = [
         id: "yudha",
         name: "Hendrian Yudha Pratama",
         image: import.meta.env.BASE_URL + "assets/foto-profile/Yudha.jpg",
-        role: "Developer",
-        bio: "Passionate developer with a strong focus on creating intuitive and scalable web applications. " +
-            "Always eager to learn new technologies and improve coding skills.",
-        github: "#",
+        role: "Frontend Dev & UI/UX Designer",
+        bio: "Frontend developer with a keen eye for UI/UX design. " +
+            "Focused on crafting beautiful, user-friendly interfaces and turning design concepts into polished, responsive web experiences.",
+        github: "https://github.com/yudha556",
         instagram: "https://www.instagram.com/hendrian_yudhaa__/",
         personal: "#"
     },
@@ -39,7 +39,7 @@ export const teamMembers = [
         role: "Developer",
         bio: "Creative developer with a knack for UI/UX design. " +
             "Believes that great software should not only work well but also look good.",
-        github: "https://github.com/username",
+        github: "#",
         instagram: "https://www.instagram.com/azzikrfarras/",
         personal: "#"
     },
@@ -51,7 +51,7 @@ export const teamMembers = [
         bio: "Specializing in Backend Systems and AI solutions. " +
             "Currently exploring LLMs (Fine-tuning, Chatbot, Merging models with LoRA, etc.) " +
             "and intelligent agents to automate workflows.",
-        github: "https://github.com/NotCayaa",
+        github: "https://github.com/caya8205",
         instagram: "https://www.instagram.com/rynnotfound404/",
         personal: "#"
     },
@@ -62,7 +62,7 @@ export const teamMembers = [
         role: "Developer",
         bio: "Enthusiastic developer focused on delivering high-quality software. " +
             "Enjoys tackling challenges and turning ideas into reality.",
-        github: "https://github.com/DavinVergian",
+        github: "https://github.com/Davergyn",
         instagram: "https://www.instagram.com/dapinee/",
         personal: "#"
     }
